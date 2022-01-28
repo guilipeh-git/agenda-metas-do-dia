@@ -25,6 +25,7 @@ class Computador:
 #comp.marca = "Samsung"
 #comp.infos()
 
+#=================================================================================================
 
 class Heranca(Computador):
     def __init__(self):
@@ -52,7 +53,7 @@ ex: class Heranca(Computador):
 
 
 
-
+#=================================================================================================
 
 class Privada:
     """essa class recebe argumentos privados"""
