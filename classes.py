@@ -61,7 +61,7 @@ class Privada:
         self.__firstName = nome
         self.__lastName = sobrenome
     def nomeCompleto(self):
-        return f"{str(self.__firstName).capitalize()} {str(self.__lastName).capitalize()}"
+        return f"{str(self.__firstName).title()} {str(self.__lastName).title()}"
 
 
 """mostra argumentos privados"""
@@ -105,3 +105,21 @@ p.get_idade() # mostro novamente a nova idade
 
 
 #===================================================================================================
+
+
+
+# setando propriedades nas class
+
+class Client:
+    def __init__(self,nome):
+        self.__nome = nome
+
+    @property 
+    #@property significa que é uma propriedade da class  ou seja eu posso chama sem passa como se fosse uma funcao , lembrando que a class
+    #é obrigada a ser privada se nao o programa falara que o atributo nao pode ser alterado.
+    def nome(self):
+        return print(self.__nome.title())
+
+
+cliente = Client("guilherme felipe")
+cliente.nome  # chamando a funcao sem passa os parametro de aspas
