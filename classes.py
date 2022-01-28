@@ -74,3 +74,34 @@ print(nome._Privada__lastName)
 """adiciona valores detro do argumento privados"""
 nome._Privada__lastName = "felipe pereira"
 print(nome.nomeCompleto())
+
+
+#===================================================================================================
+
+class Pessoa:
+    """usando o get e o set  nas class"""
+    def __init__(self,nome,idade):
+        self.__nome = nome
+        self.__idade = idade
+    
+    def get_nome(self):
+        """get ele sempre retorna algo"""
+        return print(self.__nome)
+    def get_idade(self):
+        return print(self.__idade)
+
+    def set_idade(self,idade):
+        """set ele nunca retorna nada ele altera os valores de uma variavel"""
+        self.__idade = idade
+
+
+p = Pessoa("guilherme",12)
+
+p.get_idade() # puxo idade
+
+p.set_idade(18) # atribuiu uma idade
+
+p.get_idade() # mostro novamente a nova idade
+
+
+#===================================================================================================
