@@ -1,15 +1,15 @@
 #meus decorators
-def textUpper(fun):
+def textUpperGUI(fun):
     def wrapper():
         return str(fun()).upper()
     return wrapper
 
 
 
-    
-@textUpper
+
+@textUpperGUI
 def string():
-    return "beatifull"
+    return "funciona"
 
 
 print(string())
