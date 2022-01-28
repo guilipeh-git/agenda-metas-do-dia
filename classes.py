@@ -48,3 +48,28 @@ super().__init__(v=10,i=5) v and i sao atributos aleatorios que eu coloquei
 ex: class Heranca(Computador):
     def __init__(self):
         super().__init__(marca,memoria="8gn")"""
+
+
+
+
+
+
+class Privada:
+    """essa class recebe argumentos privados"""
+    def __init__(self,nome,sobrenome):
+        self.__firstName = nome
+        self.__lastName = sobrenome
+    def nomeCompleto(self):
+        return f"{str(self.__firstName).capitalize()} {str(self.__lastName).capitalize()}"
+
+
+"""mostra argumentos privados"""
+nome = Privada("guilherme","felipe")
+print(nome._Privada__firstName)
+print(nome._Privada__lastName)
+
+#print(nome.__lastName) <= nao funciona pq eu nao chamei o nome  da class
+
+"""adiciona valores detro do argumento privados"""
+nome._Privada__lastName = "felipe pereira"
+print(nome.nomeCompleto())
