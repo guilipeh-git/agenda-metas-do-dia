@@ -109,17 +109,27 @@ p.get_idade() # mostro novamente a nova idade
 
 
 # setando propriedades nas class
+# property == get
+# nomedavariavel.setter#
+
 
 class Client:
     def __init__(self,nome):
         self.__nome = nome
 
-    @property 
+    @property # comando do get
     #@property significa que é uma propriedade da class  ou seja eu posso chama sem passa como se fosse uma funcao , lembrando que a class
     #é obrigada a ser privada se nao o programa falara que o atributo nao pode ser alterado.
     def nome(self):
         return print(self.__nome.title())
 
+    @nome.setter
+    def nome(self,nome):
+        self.__nome = nome
 
+    
 cliente = Client("guilherme felipe")
 cliente.nome  # chamando a funcao sem passa os parametro de aspas
+
+cliente.nome = "sabonete" # settei outro valor pro nome sem mudar a nomeclatura da chamada
+cliente.nome
