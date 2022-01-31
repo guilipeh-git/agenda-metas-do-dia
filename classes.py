@@ -37,7 +37,7 @@ class Heranca(Computador):
 hr = Heranca()
 
 #hr.infos()
-hr.elemento()
+#hr.elemento()
 
 """se passa outro construtor para minha class Heranca sera chamado de polimorfismo
 que e atribuição de outros valores ao meu objeto , para mim usar um init novo e 
@@ -64,19 +64,19 @@ class Privada:
         return f"{str(self.__firstName).title()} {str(self.__lastName).title()}"
 
 
-"""mostra argumentos privados"""
-nome = Privada("guilherme","felipe")
-print(nome._Privada__firstName)
-print(nome._Privada__lastName)
+# """mostra argumentos privados"""
+# nome = Privada("guilherme","felipe")
+# print(nome._Privada__firstName)
+# print(nome._Privada__lastName)
 
-#print(nome.__lastName) <= nao funciona pq eu nao chamei o nome  da class
+# #print(nome.__lastName) <= nao funciona pq eu nao chamei o nome  da class
 
-"""adiciona valores detro do argumento privados"""
-nome._Privada__lastName = "felipe pereira"
-print(nome.nomeCompleto())
+# """adiciona valores detro do argumento privados"""
+# nome._Privada__lastName = "felipe pereira"
+# print(nome.nomeCompleto())
 
 
-#===================================================================================================
+# #===================================================================================================
 
 class Pessoa:
     """usando o get e o set  nas class"""
@@ -95,13 +95,13 @@ class Pessoa:
         self.__idade = idade
 
 
-p = Pessoa("guilherme",12)
+# p = Pessoa("guilherme",12)
 
-p.get_idade() # puxo idade
+# p.get_idade() # puxo idade
 
-p.set_idade(18) # atribuiu uma idade
+# p.set_idade(18) # atribuiu uma idade
 
-p.get_idade() # mostro novamente a nova idade
+# p.get_idade() # mostro novamente a nova idade
 
 
 #===================================================================================================
@@ -126,10 +126,42 @@ class Client:
     @nome.setter
     def nome(self,nome):
         self.__nome = nome
+        
 
     
-cliente = Client("guilherme felipe")
-cliente.nome  # chamando a funcao sem passa os parametro de aspas
+# cliente = Client("guilherme felipe")
+# cliente.nome  # chamando a funcao sem passa os parametro de aspas
 
-cliente.nome = "sabonete" # settei outro valor pro nome sem mudar a nomeclatura da chamada
-cliente.nome
+# cliente.nome = "sabonete" # settei outro valor pro nome sem mudar a nomeclatura da chamada
+# cliente.nome
+
+
+#===================================================================================================
+
+# Acessar metodo de detro da class sem criar um objeto para
+
+class Pess:
+    def __init__(self,nome):
+        self.__nome = nome
+        
+
+    @property
+    def nome(self):
+        return print(self.__nome.upper())
+
+    @nome.setter
+    def nome(self,n):
+        self.__nome = n
+    ########################################################
+    #@staticmethod == me permite acessar uma informacao da class sem passa um objeto / parametro pra minha class
+    ########################################################
+    @staticmethod
+    def criador():
+        print("guilherme felipe".title())
+
+
+# p = Pess("gui")
+# p.nome = "joao"
+#p.nome
+Pess.criador() # <= dessa forma 
+
